@@ -65,7 +65,7 @@ public class TCPServer {
                                 generarNuevoNumero();
                                 out.println("Nuevo número generado");
                             } else {
-                                out.println("Gracias por jugar");
+                                out.println("Adiós");
                                 break;
                             }
                         }
