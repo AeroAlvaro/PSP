@@ -2,7 +2,8 @@ package com.agenda.agenda.entidades;
 
 public enum Rol {
     ADMIN("ADMIN"),
-    USER("USER");
+    USER("USER"),
+    INVITADO("INVITADO");
 
     private final String rol;
 

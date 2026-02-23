@@ -14,8 +14,8 @@ public class UsuarioRepository {
     public List<Usuario> getUsuarios() {
         ArrayList<Usuario> usuarios = new ArrayList<>();
         usuarios.add(new Usuario("aitor", PasswordEncryptor.encrypt("1234"), Rol.ADMIN));
-
         usuarios.add(new Usuario("alicia", PasswordEncryptor.encrypt("1111"), Rol.USER));
+        usuarios.add(new Usuario("invitado1", PasswordEncryptor.encrypt("0000"), Rol.INVITADO));
 
         return usuarios;
     }

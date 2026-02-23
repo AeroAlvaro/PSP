@@ -25,6 +25,9 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers(HttpMethod.POST, Constans.LOGIN_URL).permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/contactos/**").hasAuthority("ROLE_" + Rol.ADMIN)
+                        .requestMatchers(HttpMethod.POST, "/contactos/**").hasAnyAuthority("ROLE_" + Rol.ADMIN, "ROLE_" + Rol.USER)
+                        .requestMatchers(HttpMethod.PUT, "/contactos/**").hasAnyAuthority("ROLE_" + Rol.ADMIN, "ROLE_" + Rol.USER)
+                        .requestMatchers(HttpMethod.GET, "/contactos/**").authenticated()
                         .anyRequest().authenticated())
                 .addFilterAfter(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
 
